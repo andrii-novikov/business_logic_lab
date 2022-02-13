@@ -8,6 +8,9 @@ class EmeterReadingsController < ApplicationController
     @form = EmeterReadingForm.new(EmeterReading.new, create_params)
 
     if @form.save
+      result = BillService::Create.call(@form.object)
+      logger.warn('Bill was not created') if result.failure?
+
       render json: @form.object
     else
       render_errors @form.errors
