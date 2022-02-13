@@ -1,0 +1,11 @@
+AllCops:
+  TargetRubyVersion: 3.0
+
+Lint/MissingSuper:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
