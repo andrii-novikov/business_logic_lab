@@ -1,6 +1,6 @@
 class EmeterReadingsController < ApplicationController
   def index
-    @meters = EmeterReading.all
+    @meters = EmeterReading.order(id: :desc)
     render json: @meters
   end
 

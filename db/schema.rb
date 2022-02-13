@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_11_154145) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_13_120758) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bills", force: :cascade do |t|
+    t.date "from"
+    t.date "till"
+    t.bigint "zone_1_from"
+    t.bigint "zone_2_from"
+    t.bigint "zone_1_till"
+    t.bigint "zone_2_till"
+    t.bigint "zone_1"
+    t.bigint "zone_2"
+    t.bigint "total"
+    t.bigint "tariff"
+    t.bigint "zone_1_amount"
+    t.bigint "zone_2_amount"
+    t.bigint "total_amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "emeter_readings", force: :cascade do |t|
     t.date "date"
