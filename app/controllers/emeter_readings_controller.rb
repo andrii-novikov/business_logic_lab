@@ -5,20 +5,18 @@ class EmeterReadingsController < ApplicationController
   end
 
   def create
-    @meter = EmeterReading.new(create_params)
-    @meter.date ||= Time.now
-    @meter.source_type = :user
+    @form = EmeterReadingForm.new(EmeterReading.new, create_params)
 
-    if @meter.save
-      render json: @meter
+    if @form.save
+      render json: @form.object
     else
-      render_errors @meter.errors
+      render_errors @form.errors
     end
   end
 
   private
 
   def create_params
-    params.permit(:date, :zone_1, :zone_2, :source_type)
+    params.permit(:date, :zone_1, :zone_2)
   end
 end
