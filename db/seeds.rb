@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 EmeterReading.destroy_all
 Bill.destroy_all
 
@@ -15,10 +17,10 @@ Bill.destroy_all
   { date: '17.08.2021', zone_1: 8863, zone_2: 3799, source_type: 'controller' },
   { date: '12.09.2021', zone_1: 9043, zone_2: 3828, source_type: 'user' },
   { date: '30.09.2021', zone_1: 9509, zone_2: 3958, source_type: 'user' },
-  { date: '31.10.2021', zone_1: 10536, zone_2: 4440, source_type: 'user' },
-  { date: '30.11.2021', zone_1: 11482, zone_2: 4794, source_type: 'controller' },
-  { date: '06.01.2022', zone_1: 13309, zone_2: 5618, source_type: 'user' },
-  { date: '08.02.2022', zone_1: 14976, zone_2: 6346, source_type: 'user' }
+  { date: '31.10.2021', zone_1: 10_536, zone_2: 4440, source_type: 'user' },
+  { date: '30.11.2021', zone_1: 11_482, zone_2: 4794, source_type: 'controller' },
+  { date: '06.01.2022', zone_1: 13_309, zone_2: 5618, source_type: 'user' },
+  { date: '08.02.2022', zone_1: 14_976, zone_2: 6346, source_type: 'user' }
 ].each do |params|
   EmeterReading.create!(params)
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EmeterReadingsController < ApplicationController
   def index
     @meters = EmeterReading.order(id: :desc)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EmeterReading < ApplicationRecord
   enum source_type: {
     user: 1,

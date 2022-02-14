@@ -1,5 +1,12 @@
 AllCops:
   TargetRubyVersion: 3.0
+  Exclude:
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
+  NewCops: enable
 
 Lint/MissingSuper:
   Enabled: false
@@ -9,3 +16,6 @@ Style/Documentation:
 
 Naming/VariableNumber:
   EnforcedStyle: snake_case
+
+Metrics/MethodLength:
+  Max: 20

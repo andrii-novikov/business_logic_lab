@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ReportService
   class Generate < ApplicationService
     attr_reader :year_end, :year_start, :report
@@ -8,10 +10,10 @@ module ReportService
       @report = { total: 0, total_amount: 0, monthly: {} }
     end
 
-    def call
+    def call # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       report_month = year_start
 
-      while report_month < year_end do
+      while report_month < year_end
         prev = prev_reading(report_month)
         last = next_reading(report_month.at_end_of_month)
 

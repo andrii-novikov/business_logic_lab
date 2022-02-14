@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class ApplicationService
-  def self.call(*args, **opts, &block)
-    new(*args, **opts, &block).call
+  def self.call(...)
+    new(...).call
   end
 
   private

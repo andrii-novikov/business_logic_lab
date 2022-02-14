@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BillService
   class Create < ApplicationService
     attr_reader :current, :prev
@@ -7,7 +9,7 @@ module BillService
       @prev = EmeterReading.where(date: ..reading.date).where('id <> ?', reading.id).last
     end
 
-    def call
+    def call # rubocop:disable Metrics/AbcSize
       return failure('No previous reading found') if prev.blank?
 
       zone_1_consumption = current.zone_1 - prev.zone_1

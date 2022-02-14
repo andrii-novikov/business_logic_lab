@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FeeService
   class Calculate < ApplicationService
     TARIFF = 168

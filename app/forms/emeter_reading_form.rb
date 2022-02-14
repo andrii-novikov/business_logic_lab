@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EmeterReadingForm < ApplicationForm
   attr_reader :previous
 
